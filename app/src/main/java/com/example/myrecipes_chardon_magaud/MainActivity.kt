@@ -15,7 +15,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.myrecipes_chardon_magaud.ui.theme.MyRecipes_ChardonMagaudTheme
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navController: NavController
     private lateinit var navigationView: NavigationView
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +44,16 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.categoriesFragment, R.id.favoritesFragment),
+            drawerLayout
+        )
+
         NavigationUI.setupWithNavController(navigationView, navController)
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

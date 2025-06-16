@@ -18,7 +18,7 @@ class NutriScoreView @JvmOverloads constructor(
 
     fun setScore(value: Int) {
         score = value.coerceIn(0, 100)
-        invalidate() // Redessine la vue
+        invalidate()
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -28,15 +28,14 @@ class NutriScoreView @JvmOverloads constructor(
         val barHeight = height.toFloat()
 
         val color = when {
-            score >= 85 -> Color.parseColor("#4CAF50") // Green
-            score >= 50 -> Color.parseColor("#FF9800") // Orange
-            else -> Color.parseColor("#F44336") // Red
+            score >= 85 -> Color.parseColor("#4CAF50")
+            score >= 50 -> Color.parseColor("#FF9800")
+            else -> Color.parseColor("#F44336")
         }
 
         paint.color = color
         canvas.drawRect(0f, 0f, barWidth, barHeight, paint)
 
-        // Optional: draw score % text
         paint.color = Color.BLACK
         paint.textSize = barHeight * 0.6f
         paint.isFakeBoldText = true

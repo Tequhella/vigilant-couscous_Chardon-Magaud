@@ -2,8 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -42,6 +42,13 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+    arguments {
+        arg("dagger.hilt.android.internal.projectType", "APPLICATION")
+    }
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -68,6 +75,9 @@ dependencies {
     // Picasso
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    implementation(libs.androidx.room.common.jvm)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime.android)
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.48")
 
@@ -78,4 +88,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("org.jetbrains:annotations:23.0.0")
+    }
+    exclude(group = "com.intellij", module = "annotations")
 }
