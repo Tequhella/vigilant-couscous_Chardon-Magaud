@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:title="My Recipes"
+            android:title="@string/app_name"
             android:titleTextColor="@android:color/white" />
 
         <androidx.fragment.app.FragmentContainerView

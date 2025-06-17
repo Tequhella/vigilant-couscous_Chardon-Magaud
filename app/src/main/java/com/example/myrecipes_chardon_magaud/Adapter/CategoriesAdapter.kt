@@ -2,10 +2,8 @@ package com.example.myrecipes_chardon_magaud.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrecipes_chardon_magaud.Model.Categories
-import com.example.myrecipes_chardon_magaud.R
 import com.example.myrecipes_chardon_magaud.databinding.ItemCategoriesBinding
 import com.squareup.picasso.Picasso
 

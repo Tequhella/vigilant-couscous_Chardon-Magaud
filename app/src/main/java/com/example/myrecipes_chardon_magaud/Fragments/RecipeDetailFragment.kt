@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.myrecipes_chardon_magaud.R
 import com.example.myrecipes_chardon_magaud.ViewModel.FavoritesViewModel
 import com.example.myrecipes_chardon_magaud.ViewModel.RecipeDetailViewModel
 import com.example.myrecipes_chardon_magaud.databinding.FragmentRecipeDetailBinding
@@ -58,7 +59,7 @@ class RecipeDetailFragment : Fragment() {
             detail?.let {
                 binding.favoriteButton.setOnClickListener {
                     favoritesViewModel.addToFavorites(detail)
-                    Toast.makeText(requireContext(), "Ajouté aux favoris", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), R.string.favorite_add, Toast.LENGTH_SHORT).show()
                 }
             }
         }

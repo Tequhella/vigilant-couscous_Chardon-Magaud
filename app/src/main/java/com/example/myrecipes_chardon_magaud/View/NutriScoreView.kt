@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.ContextCompat
+import com.example.myrecipes_chardon_magaud.R
 
 class NutriScoreView @JvmOverloads constructor(
     context: Context,
@@ -28,9 +30,9 @@ class NutriScoreView @JvmOverloads constructor(
         val barHeight = height.toFloat()
 
         val color = when {
-            score >= 85 -> Color.parseColor("#4CAF50")
-            score >= 50 -> Color.parseColor("#FF9800")
-            else -> Color.parseColor("#F44336")
+            score >= 85 -> ContextCompat.getColor(context, R.color.green)
+            score >= 50 -> ContextCompat.getColor(context, R.color.orange)
+            else -> ContextCompat.getColor(context, R.color.red)
         }
 
         paint.color = color

@@ -9,9 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 class ApiClient {
     companion object RetrofitClient {
         const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
-        const val IMAGE_BASE_URL = "https://www.themealdb.com/images/"
 
-        // singleton instance
         val instance = build()
 
         private fun build(): Retrofit {

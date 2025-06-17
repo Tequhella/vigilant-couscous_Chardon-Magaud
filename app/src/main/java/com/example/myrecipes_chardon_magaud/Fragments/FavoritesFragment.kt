@@ -43,7 +43,7 @@ class FavoritesFragment : Fragment() {
             },
             onDeleteClick = { recipe ->
                 viewModel.removeFromFavorites(recipe)
-                Toast.makeText(requireContext(), "Supprimé des favoris", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), R.string.favorite_remove, Toast.LENGTH_SHORT).show()
             }
         )
 

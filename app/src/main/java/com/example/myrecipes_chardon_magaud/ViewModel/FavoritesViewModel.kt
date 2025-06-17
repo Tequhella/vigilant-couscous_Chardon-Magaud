@@ -26,7 +26,7 @@ class FavoritesViewModel(application: Application) : AndroidViewModel(applicatio
     fun addToFavorites(recipe: RecipeDetail) {
         val entity = FavoriteRecipeEntity(
             id = recipe.id ?: return,
-            name = recipe.recipeName ?: "Unnamed",
+            name = recipe.recipeName ?: "",
             imageUrl = recipe.recipeImage ?: "",
             timestamp = System.currentTimeMillis()
         )

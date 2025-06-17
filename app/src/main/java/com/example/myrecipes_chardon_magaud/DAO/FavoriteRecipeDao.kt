@@ -18,7 +18,4 @@ interface FavoriteRecipeDao {
 
     @Query("SELECT * FROM favorite_recipes ORDER BY timestamp DESC")
     fun getAll(): Flow<List<FavoriteRecipeEntity>>
-
-    @Query("SELECT * FROM favorite_recipes WHERE id = :id")
-    suspend fun getById(id: Int): FavoriteRecipeEntity?
 }

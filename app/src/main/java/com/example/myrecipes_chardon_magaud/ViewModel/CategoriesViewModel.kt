@@ -26,7 +26,7 @@ class CategoriesViewModel : ViewModel() {
                 val result = repository.getCategories()
                 _categories.value = result
             } catch (e: Exception) {
-                Log.e("CategoriesViewModel", "Error fetching categories", e)
+                Log.e("CategoriesViewModel", "Erreur: ${e.message}")
             }
         }
     }

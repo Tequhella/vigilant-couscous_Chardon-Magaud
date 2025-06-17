@@ -11,6 +11,4 @@ class FavoriteRepository(private val dao: FavoriteRecipeDao) {
     suspend fun addFavorite(recipe: FavoriteRecipeEntity) = dao.insert(recipe)
 
     suspend fun removeFavorite(recipe: FavoriteRecipeEntity) = dao.delete(recipe)
-
-    suspend fun getById(id: Int): FavoriteRecipeEntity? = dao.getById(id)
 }

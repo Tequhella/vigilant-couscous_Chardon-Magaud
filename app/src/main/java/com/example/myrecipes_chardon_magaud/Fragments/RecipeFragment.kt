@@ -54,7 +54,7 @@ class RecipeFragment : Fragment() {
 
         val categoryName = arguments?.getString("categoryName") ?: "Recipes"
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "$categoryName Recipes"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "$categoryName ${R.string.Recipes}"
 
         viewModel.getRecipes(categoryName)
     }

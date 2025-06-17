@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">MyRecipes_Chardon-Magaud</string>
+    <string name="app_name">MyRecipes</string>
+    <string name="favorite_remove">Supprimé des favoris</string>
+    <string name="favorite_add">Ajouté aux favoris</string>
+    <string name="favorite_want_add">Ajouter aux favoris</string>
+    <string name="Recipes">Mes Recettes</string>
+    <string name="Area">Pays d\'origine</string>
+    <string name="Category">Categorie</string>
+    <string name="Ingredients">Ingrédients</string>
+    <string name="ingredients_example">• Sugar: 2 tbsp\n• Flour: 100g</string>
+    <string name="Instructions">Instructions</string>
+    <string name="instructions_example">Les étapes de la cuisson se trouvent ici...</string>
 </resources>

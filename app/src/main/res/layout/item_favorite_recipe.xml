@@ -18,7 +18,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="12dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            card_view:ignore="ContentDescription" />
 
         <LinearLayout
             android:layout_width="200dp"
